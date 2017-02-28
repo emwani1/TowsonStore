@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+
+      <h1>Stock</h1>
+
+
+      <body>
+      <% @books.each do |b| %>
+          Name<p><%= b.name %></p></br>
+          <% if(b.OnlineAvaliablity.to_f > 0) %>
+              <p>We have <%= b.OnlineAvaliablity %> copies online</p>
+          <%end%>
+          <% if(b.StoreAvaliability.to_f > 0) %>
+              <p>We have <%= b.StoreAvaliability %> copies in our Towson Store</p>
+          <%end%>
+          <% if(b.StoreAvaliability.to_f == 0 && b.StoreAvaliability.to_f == 0 ) %>
+              <p>The item is currently out of stock</p>
+          <%end%>
+          <hr>
+      <%end%>
+
+      </body>
+
+<%= link_to 'New Book', new_book_path %>

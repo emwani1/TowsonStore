@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Towson Shoe Supplier</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+</head>
+
+<body class ra"<%= controller.controller_name %>">
+<div id="banner">
+  <%= image_tag("logo.png") %>
+  <%= @page_title || "Towson Shoe Supplier" %>
+</div>
+<div id="columns">
+  <div id="side">
+    <ul>
+      <li><a href="index">Home</a></li>
+      <li><a href="index">Products</a></li>
+      <li><a href="edit">Edit</a></li>
+    </ul>
+  </div>
+</div id="main">
+<%= yield %>
+</body>
+</html>
